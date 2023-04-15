@@ -34,8 +34,8 @@ buttonStart.addEventListener('click', onButtonStart)
 
 function onButtonStart() {
     buttonStart.disabled = true;
-    let timerID = setInterval(() => {
-        let { days, hours, minutes, seconds } = convertMs(remainderTime);
+    const timerID = setInterval(() => {
+        const { days, hours, minutes, seconds } = convertMs(remainderTime);
 
         remainderDays.textContent = addLeadingZero(days);
         remainderHours.textContent = addLeadingZero(hours);
