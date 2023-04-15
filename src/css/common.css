@@ -16,3 +16,30 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* My stle*/
+.flatpickr-input,
+button {
+  font-size: large;
+}
+
+.timer {
+  display: flex;
+  margin-top: 15px;
+  column-gap: 10px;
+}
+
+span {
+  display: block;
+  text-align: center;
+
+}
+
+.value {
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+.label {
+  text-transform: uppercase;
+}
