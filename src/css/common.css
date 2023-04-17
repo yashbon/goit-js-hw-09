@@ -19,7 +19,9 @@ img {
 
 /* My stle*/
 .flatpickr-input,
-button {
+button,
+label,
+input {
   font-size: large;
 }
 
