@@ -8,9 +8,14 @@ const options = {
 form.addEventListener('submit', callCreatePromise);
 
 function callCreatePromise(event) {
+	document.querySelector('button[type=submit]').disabled = true;
 	event.preventDefault();
 	const { delay, step, amount } = event.currentTarget.elements;
 	let promiseDelay = 0;
+	setTimeout(() => {
+		document.querySelector('button[type=submit]').disabled = false;
+	},
+		options.timeout + Number(delay.value) + Number(step.value) * Number(amount.value) + 1);
 	for (let i = 1; i <= amount.value; i++) {
 		promiseDelay = Number(delay.value) + Number(step.value) * i;
 
@@ -20,9 +25,9 @@ function callCreatePromise(event) {
 			})
 			.catch(({ position, delay }) => {
 				Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, options);
-			});
+			})
 	}
-
+	// тут можна застосувати: event.currentTarget.reset(); Тоді не потрібно 11 і 15 рядки
 }
 
 function createPromise(position, delay) {
